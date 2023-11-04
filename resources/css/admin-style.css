@@ -1,0 +1,42 @@
+/*-------------------------gloabal settings-------------------------------*/
+:root {
+    --main: #2F80ED;
+    --main-light: #4294ff;
+    --main-dark: #2a71cf;
+    --background-main: #F4FCFF;
+    --background-second: #F5F5F5;
+    --background-third: #F5FBFD;
+    --background-fourth: #FAFAFA;
+    --text-main: #4F4F4F;
+    --text-dark: #333333;
+    --text-light: #BDBDBD;
+    --gray: #F2F2F2;
+    --darknest-blue: #11103D;
+    --another-dark: #434263;
+    --white: #FFFFFF;
+    --black: #000000;
+    --black-opacity-0: #00000000;
+    --black-opacity-4: #00000068;
+    --black-opacity-9: #000000cf;
+    --main-opacity-0: #00000000;
+    --main-opacity-1: #2f81ed08;
+    --main-opacity-9: #2f80ede0;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+}
+a, p, span, div, button, image, h1, h2, h3, h4, h5 , h6, img {
+    transition: 0.3s ease;
+}
+body {
+    margin: 0;
+    color: var(--main-text);
+    font-weight: 400;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
