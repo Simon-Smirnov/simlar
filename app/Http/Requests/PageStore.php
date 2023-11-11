@@ -32,6 +32,6 @@ class PageStore extends FormRequest
     }
 
     protected function uniqueTitleRule() {
-        return Rule::unique(Page::class, 'title');
+        return Rule::unique(Page::class, 'title')->whereNull('deleted_at');
     }
 }

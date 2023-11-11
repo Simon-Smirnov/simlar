@@ -23,10 +23,14 @@ class Pages extends Controller
 
     public function store(StoreRequest $request)
     {
-        //dd($request);
         $fields = $request->validated();
-        $page = Page::create($fields);
-        return redirect()->route('admin.pages.show', $page->id);
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('public/pages');
+            $fields['image'] = basename($path);
+            $page = Page::create($fields);
+            $request->session()->flash('success', "Page №" . $page->id . " was added!");
+            return redirect()->route('admin.pages.show', $page->id);
+        }
     }
 
     public function show(Page $page)
@@ -46,6 +50,7 @@ class Pages extends Controller
             $path = $request->file('image')->store('public/pages');
             $fields['image'] = basename($path);
             $page->update($fields);
+            $request->session()->flash('success', "Page №" . $page->id . " was edited!");
             return redirect()->route('admin.pages.show', $page->id);
         }
     }

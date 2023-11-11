@@ -32,6 +32,11 @@
     <header>
         <div class="container">
             <h2>Admin panel</h2>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div>
     </header>
     {{ $slot }}

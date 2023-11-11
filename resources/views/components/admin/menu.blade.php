@@ -10,6 +10,9 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="{{ route('admin.trashes.index') }}">trash pages</a>
+            </li>
         </ul>
     </nav>
 </div>
